@@ -6,7 +6,7 @@
 
 Cargo有点像Java中的Maven与Ant的合体，是一个依赖管理工具，不过更全能一些，用来管理依赖，编译，运行等。
 
-```text
+```rust
 $ cargo new hello_cargo    // 创建项目
 $ cd hello_cargo           // 切换到项目路径下
 ```
@@ -26,7 +26,7 @@ $ cargo run                // build并执行项目文件
 
 ## 二. 最简单的程序：Hello World
 
-```text
+```rust
 fn main() {
     println!("Hello World!");
 }
@@ -38,7 +38,7 @@ fn main() {
 
 ### 1. 变量与可变性
 
-```text
+```rust
 fn main(){
     let a = 123;     // 声明一个不可变变量，类型自动判断，这点和Python类似
     a = 234;         // 此语法错误，因为a不可变
@@ -66,37 +66,37 @@ fn main(){
 * **布尔型**：布尔型用 `bool` 表示，值只能为 `true` 或 `false`。
 * **字符型**：字符型用 `char` 表示，`char` 类型大小为 4 个字节，代表 Unicode标量值。
 
-  **2\). 组合类型\(Compound\)**
+**2\). 组合类型\(Compound\)**
 
 * **元组**：用一对`()`包括的一组数据，可以包含不同种类的数据
 
-  ```text
-  fn main(){
-    let tup: (i32, f64, u8) = (500, 6.4, 1);
-    let tup2 = (500, 6.4, "hello");
-    let (x, y, z) = (1, 2, 3);      // 解构let
+```rust
+fn main(){
+  let tup: (i32, f64, u8) = (500, 6.4, 1);
+  let tup2 = (500, 6.4, "hello");
+  let (x, y, z) = (1, 2, 3);      // 解构let
 
-    let x = tup.0;
-    let y = tup.1;
-    let z = tup.2;
+  let x = tup.0;
+  let y = tup.1;
+  let z = tup.2;
 
-    println!("x is {}", x);
-  }
-  ```
+  println!("x is {}", x);
+}
+```
 
 * **数组**：用一对`[]`包括的同类型数据
 
-  ```text
-  fn main(){
-    let a = [1, 2, 3, 4, 5];
-    let b: [i32;5] = [1, 2, 3, 4, 5];
-    let c = [0; 20];             // c的每个元素都初始化为0
+```rust
+fn main(){
+  let a = [1, 2, 3, 4, 5];
+  let b: [i32;5] = [1, 2, 3, 4, 5];
+  let c = [0; 20];             // c的每个元素都初始化为0
 
-    println!("a[0] is {}", a[0]);
+  println!("a[0] is {}", a[0]);
 
-    println!("b has {} elements", b.len());
-  }
-  ```
+  println!("b has {} elements", b.len());
+}
+```
 
 ### 3. 函数
 
@@ -126,7 +126,7 @@ fn main() {
 
 此外，Rust 中可以在一个用`{}`包括的块里编写一个较为复杂的表达式，这种表达式块叫做函数体表达式。Rust语句不返回值，C等中的语句会返回值。
 
-```text
+```rust
 fn main() {
     let x = 5;
 
@@ -142,7 +142,7 @@ fn main() {
 
 函数指针：
 
-```text
+```rust
 let x: fn(i32) -> i32 = foo;
 ```
 
@@ -169,7 +169,7 @@ fn main() {
 
 注意：Rust 中的 if 不存在单语句不用加 `{}` 的规则，不允许使用一个语句代替一个块。条件表达式必须是 `bool` 类型。
 
-```text
+```rust
 fn main() {
     let a = 3;
     let number = if a > 0 { 1 } else { -1 };  // 高级用法
@@ -181,7 +181,7 @@ fn main() {
 
 #### 3\). while循环: 与C语言差不多
 
-```text
+```rust
 fn main() {
     let mut number = 1;
     while number != 4 {
@@ -194,7 +194,7 @@ fn main() {
 
 #### 4\). for循环：在 C 语言中 for 循环使用三元语句控制循环，但是 Rust 中**没有**这种用法，for语句用于遍历一个迭代器。
 
-```text
+```rust
 fn main() {
     let mut a = [10, 20, 30, 40, 50];
     for i in a.iter() {             // 创造一个不可修改值的循环器
