@@ -1338,3 +1338,4 @@ scores.entry(String::from("Blue")).or_insert(50);  // 使用 entry 方法只在�
 ```
 
 哈希 map 有一个特有的 API，叫做 `entry`，它获取我们想要检查的键作为参数。`entry` 函数的返回值是一个枚举，`Entry`，它代表了可能存在也可能不存在的值。`Entry` 的 `or_insert` 方法在键对应的值存在时就返回这个值的 `Entry`，如果不存在则将参数作为新值插入并返回修改过的 `Entry`。
+
